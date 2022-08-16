@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/smartcontrol/example/example.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 467.0
+margin_top = 281.0
+margin_right = 556.0
+margin_bottom = 319.0
+
+[node name="Label [text=info]" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 89.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Positive value"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 89.0
+margin_bottom = 38.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 18.0
+margin_right = 71.0
+margin_bottom = 20.0
+
+[node name="Button (pressed=decrement)" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "-"
+
+[node name="Label [text=count]" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 29.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+text = "0"
+align = 1
+
+[node name="Button (pressed=increment)" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 33.0
+margin_right = 53.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 2
+text = "+"

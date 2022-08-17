@@ -14,8 +14,6 @@ enum BindingType {
 
 onready var method_list = get_method_list()
 
-
-
 func _ready():
 	_find_and_bind(self)
 	_initialize_ui()
@@ -40,7 +38,12 @@ func _find_and_bind(control) -> void:
 
 
 func bind_control_with_var(control:Control, prop_name, var_name:String) -> void:
-	prev_state[var_name] = self[var_name]
+	var type = typeof(self[var_name])
+	if type == TYPE_ARRAY or type == TYPE_DICTIONARY:
+		prev_state[var_name] = self[var_name].duplicate(true)
+	else:
+		prev_state[var_name] = self[var_name]
+	
 	if not controls_binded_with_var.has(var_name):
 		controls_binded_with_var[var_name] = []
 	
@@ -107,10 +110,12 @@ func _initialize_ui() -> void:
 func _update_ui() -> void:
 	_before_update_ui()
 	var vars_changed = _find_changed_vars()
+	print(vars_changed)
 	for variable_changed in vars_changed:
 		for control in controls_binded_with_var[variable_changed]:
 			if is_instance_valid(control.control):
 				_update_control(control.control, control.prop_name, variable_changed)
+
 
 func _find_changed_vars() -> Array:
 	var output = []
@@ -127,12 +132,21 @@ func _find_changed_vars() -> Array:
 				prev_state[key] = self[key]
 				output.append_array(_find_changed_vars())
 	return output
-										# items
+
+
 func _update_control(control, prop_name, var_name) -> void:
-	if prop_name == "*items":
+	if prop_name == "items":
+#		print(var_name + str(self[var_name]))
 		if control.get_children().size() < self[var_name].size():
-			for x in range(control.get_children().size() -1, self[var_name].size()):
-				control.add_child(self[var_name][x].scene.instance())
+			for x in range(control.get_children().size(), self[var_name].size()):
+				var child = self[var_name][x].scene.instance()
+				for key in self[var_name][x]:
+					if key != "scene":
+						child[key] = self[var_name][x][key]
+				control.add_child(child)
+				
+		return
+	
 	if prop_name == "text":
 		control.text = str(self[var_name])
 	else:

@@ -1,7 +1,7 @@
 extends SmartControl
-signal signal_sended
+signal delete_button_pressed(item)
 
 var text = "text"
 
-func emit():
-	emit_signal("signal_sended")
+func _on_delete_button_pressed():
+	emit_signal("delete_button_pressed",self)

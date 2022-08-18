@@ -19,4 +19,3 @@ func increment():
 
 func decrement():
 	self.count -= 1
-

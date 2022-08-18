@@ -1,24 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://item.gd" type="Script" id=1]
 
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
+
 [node name="Label" type="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 0, 20 )
+anchor_right = 1.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 0, 41 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 40.0
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+size_flags_vertical = 5
+custom_styles/panel = SubResource( 1 )
 
-[node name="Label [text=text]" type="Label" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label [text=text]" type="Label" parent="Panel/HBoxContainer"]
 margin_top = 13.0
 margin_right = 25.0
 margin_bottom = 27.0
@@ -27,7 +34,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button (pressed=emit)" type="Button" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer"]
 margin_left = 29.0
-margin_right = 41.0
+margin_right = 384.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Button (pressed=_on_delete_button_pressed)" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 388.0
+margin_right = 400.0
 margin_bottom = 40.0

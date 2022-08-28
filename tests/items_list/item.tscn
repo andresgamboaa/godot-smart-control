@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://item.gd" type="Script" id=1]
+[ext_resource path="res://tests/items_list/item.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 4.0
@@ -36,11 +36,12 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer"]
 margin_left = 29.0
-margin_right = 384.0
+margin_right = 343.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 
 [node name="Button (pressed=_on_delete_button_pressed)" type="Button" parent="Panel/HBoxContainer"]
-margin_left = 388.0
+margin_left = 347.0
 margin_right = 400.0
 margin_bottom = 40.0
+text = "delete"

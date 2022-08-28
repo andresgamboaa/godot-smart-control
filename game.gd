@@ -1,3 +1,0 @@
-extends SmartControl
-
-var life

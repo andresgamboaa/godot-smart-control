@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Object",
+"class": "BinaryToggle",
+"language": "GDScript",
+"path": "res://addons/smartcontrol/binary_toggle.gd"
+}, {
 "base": "Control",
 "class": "SmartControl",
 "language": "GDScript",
 "path": "res://addons/smartcontrol/smartcontrol.gd"
 } ]
 _global_script_class_icons={
+"BinaryToggle": "",
 "SmartControl": ""
 }
 

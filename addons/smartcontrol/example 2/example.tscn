@@ -28,13 +28,15 @@ margin_bottom = 20.0
 margin_right = 53.0
 margin_bottom = 20.0
 
-[node name="Button (pressed=decrement)" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
 margin_right = 17.0
 margin_bottom = 20.0
 mouse_default_cursor_shape = 2
 text = "-"
 
-[node name="Label [text=count]" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
 margin_left = 21.0
 margin_top = 3.0
 margin_right = 29.0
@@ -43,7 +45,8 @@ size_flags_horizontal = 3
 text = "0"
 align = 1
 
-[node name="Button (pressed=increment)" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
 margin_left = 33.0
 margin_right = 53.0
 margin_bottom = 20.0

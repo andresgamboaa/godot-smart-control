@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="SmartControl"
 config/description="SmartControl is a control node with features that allow to create interactive user interfaces with less and more readable code. SmartControl will keep your ui and data in sync, so you don't have to worry about that."
-run/main_scene="res://addons/smartcontrol/example/example.tscn"
+run/main_scene="res://addons/smartcontrol/example 2/example.tscn"
 run/low_processor_mode=true
 
 [display]

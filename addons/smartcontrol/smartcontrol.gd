@@ -374,7 +374,7 @@ func create_binary_toggle(initial):
 
 func repeat(control, array_name):
 	prev_state[array_name] = target[array_name].duplicate(true)
-
+	
 	repeatables[array_name] = {
 		control=control,
 		parent=control.get_parent(),
